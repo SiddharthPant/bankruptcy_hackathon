@@ -4,3 +4,4 @@
 !key_values.csv
 .idea/
 .python-version
+*.pyc
