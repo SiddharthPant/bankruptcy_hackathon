@@ -1,5 +1,6 @@
 *.csv
 *.arff
 .ipynb_checkpoints/
-data/
+!key_values.csv
 .idea/
+.python-version
