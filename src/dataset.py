@@ -35,6 +35,7 @@ class Dataset(object):
         xy = []
         for datum in self.data:
             x, y = datum.iloc[:, :-1], datum['class']
+            y = y.apply(int)
             x = x.drop(self.df.loc[['Attr37', 'Attr21']]['description'].values, axis=1)
             xy.append((x, y))
         return xy
@@ -65,10 +66,10 @@ def get_train_test_list(data):
         impute([(datum[1], datum[3]) for datum in data])
     )
 
+
 def jointer(data, index):
     data_list = [df[index] for df in data]
     return pd.concat(data_list)
-
 
 
 def impute(data):
